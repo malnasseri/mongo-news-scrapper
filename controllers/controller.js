@@ -29,7 +29,7 @@ router.get("/savedarticles", function(req, res) {
                   articles: doc
                 };
 
-                  res.render("savedarticles", hbsArticleObject);
+                  res.render("savedArticles", hbsArticleObject);
               }
       });
 });
