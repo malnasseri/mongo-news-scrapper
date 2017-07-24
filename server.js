@@ -42,7 +42,7 @@
 	if(process.env.MONGODB_URI){
 		mongoose.connect(process.env.MONGODB_URI);
 	}else {
-		mongoose.connect("mongodb://heroku_9mdt0bck@ds145659.mlab.com:45659/heroku_9mdt0bck");
+		mongoose.connect("mongodb://heroku_9mdt0bck:Monday1982@ds145659.mlab.com:45659/heroku_9mdt0bck");
 	}
 
 	var db = mongoose.connection;
