@@ -1,0 +1,89 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">News Scraper</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="/savedarticles">Saved Articles</a></li>
+      </ul>
+      
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!--End navigation-->
+    <!-- Main container -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <form action="/scrape" method="POST" class="navbar-form pull-right">
+              <button type="submit" class="btn btn-danger scrape">SCRAPE NEW ARTICLES</button>
+            </form>
+            <h2>New York Times Breaking News Headlines</h2>
+            <h4>Hit "SCRAPE NEW ARTICLES!" button to get started!</h4>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{#each articles}}
+          <div class="panel panel-primary">
+            <div class="panel-heading row">
+              <div class="col-xs-9">
+                <h3 class="panel-title pull-left">{{this.title}}</h3>
+              </div>
+              <div class="col-xs-3">
+                <form action="/save" method="POST">
+                  <input id="article-title" type="hidden" name="title" value="{{this.title}}">
+                  
+                  <input id="article-link" type="hidden" name="link" value={{this.link}}><strong>
+                  <button type="submit" id="save" class="btn btn-primary pull-right">SAVE ARTICLE</button>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12>">
+                <div class="panel-body">
+                  <p>{{this.link}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!--  -->
+    <script>
+              // When you click the save article button
+              $(document).on("click", "#save", function() {
+                          // Grab the id associated with the article from the submit button
+                          var thisId = $(this).attr("data-id");
+                          // Run a POST request to change the note, using what's entered in the inputs
+                          $.ajax({
+                                method: "POST",
+                                url: "/save/" + thisId,
+                                data: {
+                                title: "title",
+                                link: "link"
+                                }
+                          }).done(function(data) {
+                                    // console.log("**********************");
+                                    // console.log(data);
+                          });
+              });
+
+
+
