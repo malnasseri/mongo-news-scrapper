@@ -36,13 +36,10 @@
 
 	app.use("/", routes);
 
-	mongoose.connect("mongodb://localhost/test");
-	
-
 	if(process.env.MONGODB_URI){
 		mongoose.connect(process.env.MONGODB_URI);
 	}else {
-		mongoose.connect("mongodb://heroku_9mdt0bck:7oa94927nmegnbdnq010q2ecbe@ds145659.mlab.com:45659/heroku_9mdt0bck");
+		mongoose.connect("mongodb://localhost/test");
 	}
 
 	var db = mongoose.connection;
