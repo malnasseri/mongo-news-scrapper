@@ -37,8 +37,15 @@
 	app.use("/", routes);
 
 	mongoose.connect("mongodb://localhost/test");
-	var db = mongoose.connection;
+	
 
+	if(process.env.MONGODB_URI){
+		mongoose.connect(process.env.MONGODB_URI);
+	}else {
+		mongoose.connect("mongodb://heroku_9mdt0bck@ds145659.mlab.com:45659/heroku_9mdt0bck");
+	}
+
+	var db = mongoose.connection;
 	// Show any mongoose errors
 	db.on("error", function(error) {
 	  		console.log("Mongoose Error: ", error);
