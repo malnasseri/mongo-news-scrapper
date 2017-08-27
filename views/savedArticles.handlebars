@@ -98,7 +98,7 @@
                                           $('#actualnotes').text("There aren't any notes yet.");
                               }
                               // A textarea to add a new note body
-                              $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+                              $("#notes").append("<textarea id='bodyinput' name='body'class='required'></textarea>");
                               // A button to submit a new note, with the id of the article saved to it
                               $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
                               $("#savenote").addClass("btn btn-primary saveNote");
