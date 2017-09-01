@@ -10,7 +10,7 @@ mongoose.Promise = Promise;
 var Note = require("../models/Note.js");
 var Article = require("../models/Article.js");
 // this route to render index.html
-router.get("*", function(req, res) {
+router.get("/", function(req, res) {
       res.render("index");
 });
 
@@ -85,7 +85,7 @@ router.post("/save", function(req, res) {
                     savedArticles.push(entry);
                   // console.log(savedArticles);
                   }
-                  res.redirect("/");
+                  res.redirect("/scrape");
     });
         
 });
