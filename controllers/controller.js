@@ -85,7 +85,7 @@ router.post("/save", function(req, res) {
                     savedArticles.push(entry);
                   // console.log(savedArticles);
                   }
-                  console.log("OK");
+                  res.redirect(savedArticles);
     });
         
 });
