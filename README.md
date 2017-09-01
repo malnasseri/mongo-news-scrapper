@@ -4,7 +4,7 @@
 Articles for later times, Users can also Add, View and Delete notes from each
 Saved Article.
 
-### View app live on [Heroku](https://gorilla-shift-scheduler.herokuapp.com/)
+### View app live on [Heroku](https://mongo-news-scrapper.herokuapp.com/)
 
 ## Run locally
 ### Install dependencies
@@ -13,47 +13,21 @@ npm install
 ```
 ### Start the server
 ```shell
-npm run dev
+node server.js  OR  nodemon server.js
 ```
 ### Open a browser and go to [http://localhost:3000](http://localhost:3000)
 
 ## Tech
 ### Built with 
 
-### React, Node, Express, MongoDB, Passport.js.
+### ExpressJS, NodeJS, MongoDB, Mongoose, Handlebars and several npm
+packages.
 
-Important Dependencies Involved In Application Design
----
-**Client-Side**
-
-* react - javascript library for creating views/interfaces with components.
-
-* react-router v4 - maps react components to URL routes, thus enabling single-page navigation.
-
-* axios - for making AJAX requests to the server.
-
-
-**Server-Side**
-
-* express - a node.js http server framework and interface.
-
-* mongoose - mongoDB object modeling tool.
-
-* passportJS
-    * passport - express authentication middleware.
-    * passport-local - passport strategy for authenticating with an email and password.
-
-* bcrypt-nodejs - for encrypting user passwords before saving them to the database.
 
 ## Below Are some screen shots:
 
-![Gorilla Scheduler-1](./public/assets/images/gorilla1.png)
-![Gorilla Scheduler-2](./public/assets/images/gorilla2.png)
-![Gorilla Scheduler-3](./public/assets/images/gorilla3.png)
-![Gorilla Scheduler-4](./public/assets/images/gorilla4.png)
-![Gorilla Scheduler-5](./public/assets/images/gorilla5.png)
-![Gorilla Scheduler-6](./public/assets/images/gorilla6.png)
-![Gorilla Scheduler-7](./public/assets/images/gorilla7.png)
-![Gorilla Scheduler-8](./public/assets/images/gorilla8.png)
+![Mongo News Scrapper-1](./public/assets/Dashboard.png)
+![Mongo News Scrapper-2](./public/assets/SavedArticles.png)
+![Mongo News Scrapper-3](./public/assets/AddNote.png)
 
 
