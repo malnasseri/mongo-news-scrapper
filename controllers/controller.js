@@ -33,7 +33,7 @@ router.get("/savedarticles", function(req, res) {
               }
       });
 });
-
+  
 //this route will scrape the website
 router.post("/scrape", function(req, res) {
         // grab the body of the html with request
@@ -62,6 +62,8 @@ router.post("/scrape", function(req, res) {
         });
 });
 
+
+
 router.post("/save", function(req, res) {
           // console.log("This is the title: " + req.body.title);
           // console.log("This is the link: " + req.body.link);
@@ -85,7 +87,7 @@ router.post("/save", function(req, res) {
                     savedArticles.push(entry);
                   // console.log(savedArticles);
                   }
-                  res.redirect(savedArticles);
+                  res.redirect("savedArticles");
     });
         
 });
