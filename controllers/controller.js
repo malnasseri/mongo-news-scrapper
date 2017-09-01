@@ -72,10 +72,6 @@ router.post("/save", function(req, res) {
           newArticleObject.title = req.body.title;
           newArticleObject.link = req.body.link;
           var entry = new Article(newArticleObject);
-
-          
-
-           
           // Now, save that entry to the db
           entry.save(function(err, doc) {
                   // Log any errors
