@@ -38,7 +38,7 @@
       <div class="row">
         <div class="col-md-12">
           {{#each articles}}
-          <div class="panel panel-primary">
+          <div class="panel panel-primary article">
             <div class="panel-heading row">
               <div class="col-xs-9">
                 <h3 class="panel-title pull-left">{{this.title}}</h3>
@@ -70,24 +70,26 @@
     <!--  -->
     <script>
 
-              // // When you click the save article button
-              // $(document).on("click", "#save", function() {
+              // When you click the save article button
+              $(document).on("click", "#save", function() {
                           
-              //             // Grab the id associated with the article from the submit button
-              //             var thisId = $(this).attr("data-id");
+                          // Grab the id associated with the article from the submit button
+                          var thisId = $(this).attr("data-id");
 
-              //             // Run a POST request to change the note, using what's entered in the inputs
-              //             $.ajax({
-              //                   method: "POST",
-              //                   url: "/save" + thisId,
-              //                   data: {
-              //                   title: "title",
-              //                   link: "link"
-              //                   }
-              //             }).done(function(data) {
-                                    
-              //             });
-              // });
+                          // Run a POST request to change the note, using what's entered in the inputs
+                          $.ajax({
+                                method: "POST",
+                                url: "/save/" + thisId,
+                                data: {
+                                title: "title",
+                                link: "link"
+                                }
+                          }).done(function(data) {
+                                   
+                              });
+                      
+                          
+              });
     </script>
 
 
